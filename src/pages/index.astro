@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<div class="header-left">
-			<img src="" alt="">
+			<img src="/images/logo-transparent.png" alt="">
 			<h4>LOS KOLLINGAS</h4>
 		</div>
 		<nav class="header-right">
@@ -22,6 +22,17 @@
 			</ul>
 		</nav>
 	</header>
+	<hr>
+	<section>
+		<div class="section-left">
+			<h3>Vive de una manera más saludable y ordenada</h3>
+			<p>Nutrición e Innovación en un solo lugar</p>
+			<a href="/">Contactanos</a>
+		</div>
+		<div class="section-right">
+			<img src="/images/health.png" alt="fondo principal">
+		</div>
+	</section>
 </body>
 </html>
 <style>
@@ -35,7 +46,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		padding: 0px 20px;
-		background-color: aquamarine;
+		background-color: white;
 	}
 	.header-left{
 		display: flex;
@@ -43,10 +54,22 @@
 		align-items: center;
 		justify-content: center;
 	}
+	.header-left img{
+		width: 100px;
+		height: 52px;
+	}
 	ul{
 
 	}
-	a{
+	.header-right a{
 		text-decoration: none;
+	}
+	section{
+		background-color: #f5f7fa;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		height:92.5vh;
 	}
 </style>
