@@ -9,17 +9,44 @@
   <title>Title</title>
 </head>
 <body>
-  <h1>
-	Este es mi tercer proyecto en astro 
-  </h1>
-  <p>Segales me la pelas</p>
+	<header>
+		<div class="header-left">
+			<img src="" alt="">
+			<h4>LOS KOLLINGAS</h4>
+		</div>
+		<nav class="header-right">
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<li><a href="/">Comunidad</a></li>
+				<li><a href="/">Nuestros clientes</a></li>
+			</ul>
+		</nav>
+	</header>
 </body>
 </html>
 <style>
-	h1{
-		background-color: bisque;
+	*{
+		margin: 0%;
+		padding: 0%;
+		bottom: 0%;
 	}
-	p{
-		color: blue;
+	header{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0px 20px;
+		background-color: aquamarine;
+	}
+	.header-left{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	ul{
+
+	}
+	a{
+		text-decoration: none;
 	}
 </style>
