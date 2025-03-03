@@ -9,9 +9,10 @@
   <title>Title</title>
 </head>
 <body>
+	
 	<header>
 		<div class="header-left">
-			<img src="/images/logo-transparent.png" alt="">
+			<img src="/images/health.png" alt="">
 			<h4>LOS KOLLINGAS</h4>
 		</div>
 		<nav class="header-right">
@@ -22,17 +23,28 @@
 			</ul>
 		</nav>
 	</header>
-	<hr>
-	<section>
+	<hr class="Line">
+	<main class="card-main">
+	<section class="card card1">
 		<div class="section-left">
 			<h3>Vive de una manera más saludable y ordenada</h3>
 			<p>Nutrición e Innovación en un solo lugar</p>
 			<a href="/">Contactanos</a>
 		</div>
 		<div class="section-right">
-			<img src="/images/health.png" alt="fondo principal">
+			<img src="/images/fondo-principal1.png" alt="fondo principal">
 		</div>
 	</section>
+	<section class="card card2">
+		<h2>Hola</h2>
+	</section>
+	<section class="card card3">
+		<h3> Section3</h3>
+	</section>
+	<section class="card card4">
+		<h4>Section4</h4>
+	</section>
+	</main>
 </body>
 </html>
 <style>
@@ -45,7 +57,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 0px 20px;
+		padding: 5px 20px;
 		background-color: white;
 	}
 	.header-left{
@@ -55,14 +67,24 @@
 		justify-content: center;
 	}
 	.header-left img{
-		width: 100px;
-		height: 52px;
+		width: 32px;
+		height: 32px;
+		margin-right: 0.5rem;
 	}
-	ul{
-
+	.header-right ul{
+		list-style-type: none;
+		overflow: hidden;
+	}
+	.header-right li{
+		float: left;
+		padding: 10px 20px;
 	}
 	.header-right a{
 		text-decoration: none;
+		color: #263238;
+	}
+	.Line{
+		border: 1px solid #89939E; 
 	}
 	section{
 		background-color: #f5f7fa;
@@ -70,6 +92,43 @@
 		flex-direction: row;
 		justify-content: space-evenly;
 		align-items: center;
-		height:92.5vh;
+		height:100vh;
+	}
+	.section-left{
+		width: 50%;
+		margin-left: 200px;
+	}
+	.section-right{
+		width: 50%;
+		
+	}
+	.section-right img{
+
+	}
+	.section-left h3{
+		font-size:3rem;
+		color: #263218;
+	}
+	.section-left p{
+		font-size: 2rem;
+		color: #89939E;
+		margin-bottom: 20px;
+	}
+	.section-left a{
+		color: white;
+		text-decoration: none;
+		background-color: #388E3B;
+		padding: 10px 20px;
+		border-radius: 5px;
+	}
+	.card-main{
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory ;
+	}
+	.card{
+		scroll-snap-align: start;
+	}
+	.card1{
+
 	}
 </style>
