@@ -1,9 +1,30 @@
-
 ---
-
+const ExtraInformationCard = [
+	{
+		id:"1",
+		title: "Misión",
+		description:"Desarrollar tecnología innovadora que empodere a las personas a mejorar su bienestar físico y mental, facilitando el acceso a herramientas inteligentes que promuevan hábitos saludables, equilibrio y calidad de vida.",
+		image:"/images/Mision.avif"
+	},
+	{
+		id:"2",
+		title: "Visión",
+		description:"Ser la empresa líder en tecnología para el bienestar, revolucionando la manera en que las personas cuidan su salud a través de soluciones digitales accesibles, personalizadas y respaldadas por la ciencia.",
+		image:"/images/Vision.jpg"
+	},
+	{
+		id:"3",
+		title: "Propósito",
+		description:"El propósito de Kollingas es transformar la vida de las personas a través de la tecnología, proporcionando soluciones innovadoras que mejoren su bienestar físico, mental y emocional.",
+		image:"/images/Proposito.jpg"
+	},
+]
 ---
 <html lang="es">
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Title</title>
@@ -29,26 +50,44 @@
 		<div class="section-left">
 			<h3>Vive de una manera más saludable y ordenada</h3>
 			<p>Nutrición e Innovación en un solo lugar</p>
-			<a href="/">Contactanos</a>
+			<a href="#contactanos">Contactanos</a>
 		</div>
 		<div class="section-right">
-			<img src="/images/fondo-principal2.png" alt="fondo principal">
+			<img src="/images/fondo-principal3.png" alt="fondo principal">
 		</div>
 	</section>
 	<section class="card card2">
 		<div class="card2-left">
-			<img src="" alt="">
+			<img src="/images/img-section2.webp" alt="">
 		</div>
 		<div class="card2-right">
-			<h2>Hola</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta. Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium auctor. Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum pulvinar odio.</p>
+			<h2>¿Quienes Somos?</h2>
+			<p>En Kollingas, creemos que la tecnología puede transformar la vida de las personas, brindando herramientas innovadoras para mejorar su bienestar. Nuestra empresa nace con la misión de fusionar la ciencia, la tecnología y el cuidado personal, ofreciendo soluciones inteligentes que ayuden a las personas a vivir de manera más saludable y equilibrada.
+
+				Desde el desarrollo de aplicaciones personalizadas hasta dispositivos inteligentes, en Kollingas diseñamos tecnología que se adapta a las necesidades de cada usuario, permitiéndoles tomar el control de su bienestar de forma sencilla y efectiva.</p>
 			<a href="">Unete a nosotros</a>
 		</div>
 	</section>
 	<section class="card card3">
-		<h3> Section3</h3>
+		{
+			ExtraInformationCard.map((ec)=>(
+				<div class={`information information${ec.id}`}>
+					<article class={`information-article information-article${ec.id}`}>
+						<img src={ec.image} alt="Imagen de M-V-P"> 	
+					<div class={`information-data information-data${ec.id}`}>
+						<h3>
+							{ec.title}
+			   			</h3>
+			   			<p>
+							{ec.description}
+			   			</p>
+					</div>
+					</article>
+				</div>
+			))
+		  }
 	</section>
-	<section class="card card4">
+	<section class="card card4" id="contactanos">
 		<h4>Section4</h4>
 	</section>
 	</main>
@@ -84,6 +123,12 @@
 		height: 32px;
 		margin-right: 0.5rem;
 	}
+	.header-left h4{
+		font-family: "Archivo Black", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		color: #2A3663;
+	}
 	.header-right ul{
 		list-style-type: none;
 		overflow: hidden;
@@ -93,9 +138,13 @@
 	}
 	.header-right a{
 		text-decoration: none;
-		color: #263238;
+		color: #2A3663;
 		padding: 0px 10px;
+		font-family: "Archivo Black", sans-serif;
+		font-weight: 400;
+		font-style: normal;
 	}
+
 	.Line{
 		border: 1px solid #89939E; 
 	}
@@ -137,29 +186,169 @@
 	.card-main{
 		height: 99.8vh;
 		overflow-y: scroll;
-		scroll-snap-type: y mandatory ;
+		scroll-snap-type: y mandatory;
 	}
 	.card{
 		width: 100%;
 		height: 100vh;
-		scroll-snap-align: start;
+		scroll-snap-align: center;
+		transition: transform 0.8s ease-out;
 	}
 	.card2{
 		background-color:  #B59F78;
 	}
-	.card2-left{
-		width: 50%;
+	.card2{
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
 	}
-	.card2-right{
-		width: 50%;
+	.card2 img{
+		width: 40rem;
+		border: 3px;
+		box-shadow: 20px 30px 25px 5px  #FAF6E3;
+	}
+	.card2-right h2{
+		line-height: 3rem;
 	}
 	.card2-right p{
 		max-width: 40rem;
+		line-height: 1.5rem;
+	}
+	.card2-right a{
+		line-height: 3.5rem;
+		text-decoration: none;
+		color: #FAF6E3;
+		background-color: #2A3663;
+		padding: 10px 20px;
+		border-radius: 10px;
 	}
 	.card3{
 		background-color: #FAF6E3;
+		display: grid;
+		place-items: center;
+		margin-inline: .0rem;
+		padding-block: 5rem;
+	}
+	.information{
+		display: grid;
+		row-gap: 3.5rem;
+	}
+	.information-article{
+		position: relative;
+		overflow: hidden;
+	}
+	.information-article img{
+		width: 328px;
+		border-radius: 1.5rem;
+	}
+	.information-data{
+		width: 250px;
+		background-color: #2A3663;
+		padding: 1.5rem 2rem;
+		box-shadow: 0 8px 24px 	hsla(0, 0%, 0%, .15);
+		border-radius: 1rem;
+		position: absolute;
+		bottom: -9rem;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		opacity: 0;
+		transition: opacity 1s 1s ;
+	}
+	.information-data p{
+		display: block;
+		font-size: .5rem;
+		margin-bottom: .25rem;
+		color: #FAF6E3;
+	}
+	.information-data h3{
+		font-size: .9rem;
+		margin-bottom: .75rem;
+		text-align: center;
+		color: #89939E;
+	}
+	.information-article:hover .information-data{
+		animation: show-data 1s forwards;
+		opacity: 1;
+		transition: opacity 0.3s;
+	}
+	.information-article:hover{
+		animation: remove-overflow 2s forwards;
+	}
+	.information-article:not(:hover){
+		animation: show-overflow 2s forwards;
+	}
+	.information-article:not(:hover) .information-data{
+		animation: remove-data 1s forwards;
+	}
+	@keyframes show-data {
+		50%{
+			transform: translateY(-10rem);
+		}
+		100%{
+			transform: translateY(-7rem);
+		}
+	}
+	@keyframes remove-overflow {
+		to{
+			overflow: initial;
+		}
+	}
+	@keyframes remove-data {
+		0%{
+			transform: translateY(-7rem);
+		}
+		50%{
+			transform: translateY(-10rem);
+		}
+		100%{
+			transform: translateY(.5rem);
+		}
+	}
+	@keyframes show-overflow {
+		0%{
+			overflow: initial;
+			pointer-events: none;
+		}
+		50%{
+			overflow: hidden;
+		}
 	}
 	.card4{
 		background-color: #388E3B;
+	}
+	@media (min-width:375px){
+		.card3{
+			margin-inline: 0rem;
+		}
+		.information-data{
+			width: 250px;
+			padding: 1.5rem;
+		}
+	}
+	@media(min-width 768px){
+		.information{
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 1.5rem;
+		}
+	}
+	@media(min-width:1024px){
+		.card3{
+			height: 80vh;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.information-article img{
+			width: 450px;
+			height: 300px;
+		}
+		.information-data{
+			width: 400px;
+		}
+		.information-data p{
+			font-size: 1.1rem;
+		}
+		.information-data h3{
+			font-size: 1.3rem;
+		}
 	}
 </style>
