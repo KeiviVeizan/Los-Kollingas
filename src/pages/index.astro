@@ -2,18 +2,21 @@
 const ExtraInformationCard = [
 	{
 		id:"1",
+		tit:"M",
 		title: "Misión",
 		description:"Desarrollar tecnología innovadora que empodere a las personas a mejorar su bienestar físico y mental, facilitando el acceso a herramientas inteligentes que promuevan hábitos saludables, equilibrio y calidad de vida.",
 		image:"/images/Mision.avif"
 	},
 	{
 		id:"2",
+		tit:"V",
 		title: "Visión",
 		description:"Ser la empresa líder en tecnología para el bienestar, revolucionando la manera en que las personas cuidan su salud a través de soluciones digitales accesibles, personalizadas y respaldadas por la ciencia.",
 		image:"/images/Vision.jpg"
 	},
 	{
 		id:"3",
+		tit:"P",
 		title: "Propósito",
 		description:"El propósito de Kollingas es transformar la vida de las personas a través de la tecnología, proporcionando soluciones innovadoras que mejoren su bienestar físico, mental y emocional.",
 		image:"/images/Proposito.jpg"
@@ -72,6 +75,7 @@ const ExtraInformationCard = [
 		{
 			ExtraInformationCard.map((ec)=>(
 				<div class={`information information${ec.id}`}>
+				<h2>{ec.tit}</h2>
 					<article class={`information-article information-article${ec.id}`}>
 						<img src={ec.image} alt="Imagen de M-V-P"> 	
 					<div class={`information-data information-data${ec.id}`}>
@@ -233,6 +237,14 @@ const ExtraInformationCard = [
 		display: grid;
 		row-gap: 3.5rem;
 	}
+	.information h2{
+		text-align: center;
+		font-size: 3rem;
+		font-family: "Myriad Pro", sans-serif;
+		font-weight: 900;
+		color: #2A3663;
+
+	}
 	.information-article{
 		position: relative;
 		overflow: hidden;
@@ -315,7 +327,7 @@ const ExtraInformationCard = [
 		}
 	}
 	.card4{
-		background-color: #388E3B;
+		background-color: #2A3663;
 	}
 	@media (min-width:375px){
 		.card3{
