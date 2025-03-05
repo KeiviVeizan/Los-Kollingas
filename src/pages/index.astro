@@ -2,24 +2,46 @@
 const ExtraInformationCard = [
 	{
 		id:"1",
-		tit:"M",
+		tit:"MISIÓN",
 		title: "Misión",
 		description:"Desarrollar tecnología innovadora que empodere a las personas a mejorar su bienestar físico y mental, facilitando el acceso a herramientas inteligentes que promuevan hábitos saludables, equilibrio y calidad de vida.",
 		image:"/images/Mision.avif"
 	},
 	{
 		id:"2",
-		tit:"V",
+		tit:"VISIÓN",
 		title: "Visión",
 		description:"Ser la empresa líder en tecnología para el bienestar, revolucionando la manera en que las personas cuidan su salud a través de soluciones digitales accesibles, personalizadas y respaldadas por la ciencia.",
 		image:"/images/Vision.jpg"
 	},
 	{
 		id:"3",
-		tit:"P",
+		tit:"PROPÓSITO",
 		title: "Propósito",
 		description:"El propósito de Kollingas es transformar la vida de las personas a través de la tecnología, proporcionando soluciones innovadoras que mejoren su bienestar físico, mental y emocional.",
 		image:"/images/Proposito.jpg"
+	},
+]
+
+const ExtraInformationProduct = [
+	{
+		id:"1",
+		title:"Fitness Store",
+		description:"En Kollingas, sabemos que una vida saludable no solo depende del ejercicio y la nutrición, sino también de tener acceso a los productos adecuados para potenciar tu bienestar. Es por eso que hemos creado Kollingas Store, nuestra plataforma de e-commerce donde encontrarás todo lo que necesitas para complementar tu estilo de vida saludable, con la comodidad de comprar desde cualquier lugar.",
+		image:"/images/logo-fit.png",
+		link: "", 
+	},
+	{
+		id:"2",
+		title:"FitRing",
+		description:"En Kollingas, creemos que la tecnología debe adaptarse a tu estilo de vida, no al revés. Es por eso que presentamos Kollingas FitRing, un anillo inteligente diseñado para aquellos que buscan mejorar su rendimiento, salud y bienestar sin complicaciones.",
+		image:"/images/ring-logo.png"
+	},
+	{
+		id:"3",
+		title:"Tu Despenza",
+		description:"En Kollingas, sabemos que querer tener una vida fitness es tener una buena alimentación, es por eso que nosotros realizamos Tu Despenza. Una app que te ayuda a facilitar tus comidas con lo que este a tu alcance y a la vez manteniendo las calorias correspondientes.",
+		image:"/images/pantry.png"
 	},
 ]
 ---
@@ -92,7 +114,20 @@ const ExtraInformationCard = [
 		  }
 	</section>
 	<section class="card card4" id="contactanos">
-		<h4>Section4</h4>
+		{
+			ExtraInformationProduct.map((pr)=>(
+				<div class={`information-product information-product${pr.id}`}>
+					<div class={`information-product-cont information-product-cont${pr.id}`}>
+						<img src={pr.image} alt="producto-imagen">
+						<h3>{pr.title}</h3>
+						<p>{pr.description}</p>
+						<a href="/">Saber Mas</a>
+					</div>
+					
+				</div>
+			))
+		}
+		
 	</section>
 	</main>
 </body>
@@ -328,6 +363,47 @@ const ExtraInformationCard = [
 	}
 	.card4{
 		background-color: #2A3663;
+		display: flex;
+		flex-direction: row ;
+	}
+	.information-product{
+		display: flex;
+		flex-direction: row;
+		color: #FAF6E3;
+		width: 350px;
+		background-color: #89939E;
+		padding: 1.5rem;
+		height: 450px;
+		border-radius: 2.5rem;
+	}
+	.information-product-cont{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.information-product-cont img{
+		width: 100px;
+		height: 100px;
+		margin-bottom: 3rem;
+	}
+	.information-product-cont h3{
+		margin-bottom: 3rem;
+	}
+	.information-product-cont p{
+		margin-bottom: 3rem;
+	}
+	.information-product-cont a{
+		text-decoration: none;
+		color: #2A3663;
+		background-color: #FAF6E3;
+		padding: 10px 20px;
+		border-radius: .5rem;
+	}
+	.information-product-cont2 a{
+		margin-top: 55px;
+	} 
+	.information-product-cont3 a{
+		margin-top: 35px;
 	}
 	@media (min-width:375px){
 		.card3{
