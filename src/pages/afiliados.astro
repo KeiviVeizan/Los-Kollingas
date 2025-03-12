@@ -13,8 +13,153 @@ import Headerr from "../components/headerr.astro";
 </head>
 <body>
     <Headerr/>
-  <h3>
-    Estos son nuestros afiliados
-  </h3>
+    ---
+// Componente AffiliatesSection.astro
+---
+
+<section class="affiliates-section">
+  <div class="container">
+    <h2 class="title">¿Quiénes trabajan con nosotros?</h2>
+    <div class="affiliates-grid">
+      <div class="affiliate-card">
+        <div class="logo-placeholder" style="background-color: #1C2526;">
+          <img src="/images/herbalife.png" alt="">
+        </div>
+        <h3>Herbalife</h3>
+        <p class="role">Líder en nutrición saludable</p>
+      </div>
+      <div class="affiliate-card">
+        <div class="logo-placeholder" style="background-color: #1C2526;">
+          <img src="/images/dragon.jpg" alt="">
+        </div>
+        <h3>Dragon Farma</h3>
+        <p class="role">Farmacéutica innovadora</p>
+      </div>
+      <div class="affiliate-card">
+        <div class="logo-placeholder" style="background-color: #1C2526;">
+          <img src="/images/youngla.png" alt="">
+        </div>
+        <h3>Youngla</h3>
+        <p class="role">Ropa activa sostenible</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  body{
+    background-color: #E5E7EB;
+  }
+  .affiliates-section {
+    margin-top: 3rem;
+    background-color: #E5E7EB; /* Blanco grisáceo como fondo */
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title {
+    color: #1C2526; 
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 10px;
+  }
+
+  .affiliates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .affiliate-card {
+    background-color: #FFFFFF; /* Blanco para las tarjetas */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .affiliate-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .logo-placeholder img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    /* Reemplaza esto con imágenes reales de los logos */
+    /* background-color: #FF5733; */
+  }
+
+  .affiliate-card h3 {
+    color: #1C2526; /* Negro oscuro para nombres */
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .affiliate-card .role {
+    color: #4B5563; /* Gris oscuro para el texto */
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+
+    .affiliates-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .logo-placeholder img{
+      width: 80px;
+      height: 80px;
+    }
+
+    .affiliate-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .affiliate-card .role {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .logo-placeholder img{
+      width: 60px;
+      height: 60px;
+    }
+
+    .affiliate-card {
+      padding: 1rem;
+    }
+
+    .affiliate-card h3 {
+      font-size: 1.2rem;
+    }
+
+    .affiliate-card .role {
+      font-size: 0.85rem;
+    }
+  }
+</style>
 </body>
 </html>
