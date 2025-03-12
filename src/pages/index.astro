@@ -69,7 +69,7 @@ const ExtraInformationProduct = [
 		<div class="section-left">
 			<h1>Vive de una manera más saludable y ordenada</h1>
 			<p>Nutrición e Innovación en un solo lugar</p>
-			<a href="/">Contactanos</a>
+			<a href="#contactanos">Nuestros Productos</a>
 		</div>
 		<div class="section-right">
 			<img src="/images/logo.png" alt="fondo principal">
@@ -85,7 +85,6 @@ const ExtraInformationProduct = [
 				<p>En Kollingas, creemos que la tecnología puede transformar la vida de las personas, brindando herramientas innovadoras para mejorar su bienestar. Nuestra empresa nace con la misión de fusionar la ciencia, la tecnología y el cuidado personal, ofreciendo soluciones inteligentes que ayuden a las personas a vivir de manera más saludable y equilibrada.
 	
 					Desde el desarrollo de aplicaciones personalizadas hasta dispositivos inteligentes, en Kollingas diseñamos tecnología que se adapta a las necesidades de cada usuario, permitiéndoles tomar el control de su bienestar de forma sencilla y efectiva.</p>
-				<a href="#contactanos">Unete a nosotros</a>
 			</div>
 		</div>
 	</section>
@@ -174,7 +173,7 @@ const ExtraInformationProduct = [
 		border: 2px solid #FC4C02;
 	}
 	.card-main{
-		height: 97vh;
+		height: 100vh;
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 	}
@@ -189,7 +188,7 @@ const ExtraInformationProduct = [
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		height: 90.9vh;
+		height: 100vh;
 	}
 	.card2{
 		background-color:  #101820;
@@ -230,9 +229,7 @@ const ExtraInformationProduct = [
 		height: 130vh;
 		align-content: center;
 	}
-	.information1{
-		margin-top: -7rem;
-	}
+
 	.information h2{
 		text-align: center;
 		font-size: 1rem;
@@ -329,7 +326,7 @@ const ExtraInformationProduct = [
 		height: 260vh;
 	}
 	.card4-top h2{
-		margin-top: 3rem;
+		margin-top: 5rem;
 		font-family: "Myriad Pro", sans-serif;
 	}
 	.information-product{
@@ -411,6 +408,46 @@ const ExtraInformationProduct = [
 
 	}
 	@media(min-width:1024px){
+		.card1{
+			flex-direction: row;
+		}
+		.section-left{
+			width: 50%;
+			text-align: left;
+			margin-left: 3rem;
+		}
+		.section-left h1{
+			font-size: 3rem;
+		}
+		.section-left a{
+			font-size: 1.2rem;
+			border-radius: .7rem;
+		}
+		.section-right {
+			width: 50%;
+		}
+		.section-right img{
+			width: 25rem;
+			height: 25rem;
+		}
+		.card2-main{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.card2-right{
+			text-align: right;
+		}
+		.card2 img{
+			width: 25rem;
+		}
+		.card2-right p{
+			font-size: 1rem;
+			font-weight: .2rem;
+			max-width: 30rem;
+		}
 		.card3{
 			height: 100vh;
 			grid-template-columns: repeat(3, 1fr);
@@ -418,11 +455,8 @@ const ExtraInformationProduct = [
 		.information1{
 			margin: 0;
 		}
-		.information{
-			margin-top: -10rem;
-		}
 		.card3 h2{
-			font-size: 3rem;
+			font-size: 2.5rem;
 		}
 		.information-article img{
 			width: 300px;
@@ -432,7 +466,7 @@ const ExtraInformationProduct = [
 			width: 220px;
 		}
 		.information-data p{
-			font-size: 1.1rem;
+			font-size: 1rem;
 		}
 		.information-data h3{
 			font-size: 1.3rem;
@@ -442,27 +476,34 @@ const ExtraInformationProduct = [
 			justify-content: center;
 		}
 		.card4 h2{
-			margin-top: -10rem;
-			margin-bottom:5rem;
-			font-size: 3rem;
+			margin-bottom:1rem;
+			font-size: 2.5rem;
 		}
 		.card4-bottom{
 			flex-direction: row;
 		}
 		.information-product{
 			margin: 1rem;
+			transition: background-color, color, border, .7s;
+		}
+		.information-product-cont a{
+			margin-top: 2rem;
+		}
+		.information-product-cont2 a{
+			margin-top: 5.1rem;
+		}
+		.information-product-cont3 a{
+			margin-top: 5rem;
 		}
 	}
 	@media(min-width:1440px){
 		section{
-			height: 60vh;
+			height: 100vh;
 		}
 		.card1{
-			flex-direction: row;
+			height: 100vh;
 		}
 		.section-left{
-			width: 50%;
-			text-align: left;
 			margin-left: 5rem;
 		}
 		.section-left h1{
@@ -482,18 +523,14 @@ const ExtraInformationProduct = [
 			width: 30rem;
 			height: 30rem;
 		}
-		.card2-main{
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-		}
-		.card2-right{
-			width: 50%;
-			text-align: right;
-		}
+
 		.card2 img{
 			width: 550px;
+		}
+		.card2-right p {
+			max-width: 45rem;
+			font-size: 1rem;
+			line-height: 1.7rem;
 		}
 		.card3 img{
 			width: 400px;
@@ -502,28 +539,23 @@ const ExtraInformationProduct = [
 		.information-data{
 			width: 300px;
 		}
-		.card4 h2{
-			margin-top: -4rem;
-		}
 		.information-product{
 			width: 350px;
 		}
 		.information-product p{
-			font-size: 1rem;
+			font-size: 1.1rem;
 		}
 		.information-product h3{
 			font-size: 1.5rem;
 		}
-		.information-product a{
-			margin-top: 3rem;
-			transition: backgrond-color, border, color, .7s;
+		.information-product-cont a{
+			margin-top: 1rem;
 		}
+		.information-product-cont2 a{
+			margin-top: 4.8rem;
 		}
-		.information-product2 a{
-			margin-top: 6.5rem;
-		}
-		.information-product3 a{
-			margin-top: 5.3rem;
+		.information-product-cont3 a{
+			margin-top: 4.8rem;
 		}
 	}
 </style>
