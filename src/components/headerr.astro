@@ -1,0 +1,196 @@
+---
+
+---
+
+<header>
+  <div class="header-left">
+    <img src="/images/logo.png" alt="">
+    <h4>LOS KOLLINGAS</h4>
+  </div>
+  
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <span class="hamburger"></span>
+  </button>
+
+  <nav class="header-right">
+    <button class="menu-close" aria-label="Cerrar menú">×</button>
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/comunidad">Comunidad</a></li>
+      <li><a href="/afiliados">Nuestros clientes</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  body{
+    margin: 0%;
+    padding: 0%;
+  }
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+    border-bottom: 2px solid #FF5733;
+    background-color: #1C2526;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .header-left img{
+    width: 20px;
+    height: 20px;
+  }
+  .header-left h4{
+    color: white;
+  }
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+  }
+  .menu-toggle.hidden {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #FF5733;
+    position: relative;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #000;
+    transition: all 0.3s;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    bottom: -8px;
+  }
+
+  .header-right {
+    transition: transform 0.3s ease-in-out;
+  }
+  .header-right ul{
+    list-style-type: none;
+  }
+  .header-right a{
+    text-decoration: none;
+    color: white;
+  }
+  .menu-close {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  @media(min-width:375px){
+    .header-left img{
+      width: 30px;
+      height: 30px;
+    }
+  }
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .header-right {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background: #fff;
+      transform: translateX(100%);
+    }
+
+    .header-right.active {
+      transform: translateX(0);
+      right: 0;
+      background-color: #1C2526;
+    }
+
+    .header-right ul {
+      flex-direction: column;
+      padding: 60px 20px 20px;
+      margin: 0;
+    }
+
+    .header-right li {
+      margin: 10px 0;
+    }
+
+    .menu-close {
+      display: block;
+    }
+  }
+  @media(min-width:1024px){
+    .header-right ul{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .header-right li{
+      margin: 0rem 1rem;
+      padding: .5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color, .8s;
+    }
+    .header-right li:hover{
+      background-color: #FF5733;
+    }
+    .header-right a{
+      font-size: 1.1rem;
+      font-family: "Archivo Black", sans-serif;
+    }
+  
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuClose = document.querySelector('.menu-close');
+    const nav = document.querySelector('.header-right');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.classList.add('hidden');
+    });
+
+    menuClose.addEventListener('click', () => {
+      nav.classList.remove('active');
+      menuToggle.classList.remove('hidden');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    const menuLinks = document.querySelectorAll('.header-right a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuToggle.classList.remove('hidden');
+      });
+    });
+  });
+</script>
