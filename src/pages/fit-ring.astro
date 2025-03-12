@@ -1,6 +1,7 @@
 ---
-const { title = 'Default Title' } = Astro.props;
 import Headerr from "../components/headerr.astro";
+
+const { title = 'Default Title' } = Astro.props;
 ---
 <html lang="es">
 <head>
@@ -12,14 +13,208 @@ import Headerr from "../components/headerr.astro";
   <title>Title</title>
 </head>
 <body>
-    <Headerr title="Bienvenidos"/>
-  <h2>
-    Recorte de personal 
+    <Headerr/>
+<section class="download-section">
+  <div class="container">
+    <div class="phone-container">
+      <div class="phone">
+        <div class="app-icon">
+          <img src="/images/logo-ring.png" alt="Logo">
+        </div>
+        <p class="app-text">Fitness Store</p>
+      </div>
+    </div>
+    <div class="content">
+      <h2 class="title">Descarga nuestra aplicación</h2>
+      <p class="description">
+        Descubre cómo nuestra tecnología mejora tu vida saludable. Descarga ahora y empieza tu viaje hacia un bienestar óptimo.
+      </p>
+      <div class="qr-code">
+        <img src="/images/logo-ring.png" alt="Código QR" />
+      </div>
+      <div class="buttons">
+        <a href="#" class="app-store">Descargar en Mega</a>
+        <a href="#" class="google-play">Visitar Nuestro sitio web</a>
+      </div>
+    </div>
+  </div>
+</section>
   </h2>
 </body>
 </html>
 <style>
-    body{
-        background-color: #E5E7EB;
+  body{
+    background-color: #E5E7EB;
+  }
+  .download-section {
+    margin-top: 10rem;
+    background-color: #E5E7EB;
+    padding: 4rem 1rem;
+    text-align: center;
+    height: 50vh;
+    place-items: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .phone-container {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .phone {
+    width: 200px;
+    height: 400px;
+    background: #FFFFFF;
+    border: 8px solid #1C2526;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .app-icon img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+  }
+
+  .app-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #1C2526;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .content {
+    flex: 2;
+    min-width: 250px;
+  }
+
+  .title {
+    color: #1C2526; 
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .description {
+    color: #4B5563; 
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .qr-code {
+    margin-bottom: 1.5rem;
+  }
+
+  .qr-code img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .buttons a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #FF5733; 
+    transition: background-color 0.3s;
+  }
+
+  .buttons a:hover {
+    background-color: #FF8C42; 
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
     }
+
+    .phone {
+      width: 150px;
+      height: 300px;
+    }
+
+    .app-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .app-text {
+      font-size: 0.9rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+
+    .qr-code img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .buttons a {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .download-section{
+      margin-top: 1rem;
+      height: 90vh;
+    }
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .phone {
+      width: 120px;
+      height: 240px;
+    }
+
+    .app-icon img{
+      width: 50px;
+      height: 50px;
+    }
+
+    .app-text {
+      font-size: 0.8rem;
+    }
+
+    .description {
+      font-size: 0.85rem;
+    }
+
+    .buttons a {
+      display: block;
+      width: 80%;
+      margin: 0.5rem auto;
+    }
+  }
 </style>
