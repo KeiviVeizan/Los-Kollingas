@@ -77,14 +77,16 @@ const ExtraInformationProduct = [
 	</section>
 	<section class="card card2">
 		<h2>¿Quienes Somos?</h2>
-		<div class="card2-left">
-			<img src="/images/img-section2.webp" alt="">
-		</div>
-		<div class="card2-right">
-			<p>En Kollingas, creemos que la tecnología puede transformar la vida de las personas, brindando herramientas innovadoras para mejorar su bienestar. Nuestra empresa nace con la misión de fusionar la ciencia, la tecnología y el cuidado personal, ofreciendo soluciones inteligentes que ayuden a las personas a vivir de manera más saludable y equilibrada.
-
-				Desde el desarrollo de aplicaciones personalizadas hasta dispositivos inteligentes, en Kollingas diseñamos tecnología que se adapta a las necesidades de cada usuario, permitiéndoles tomar el control de su bienestar de forma sencilla y efectiva.</p>
-			<a href="#contactanos">Unete a nosotros</a>
+		<div class="card2-main">
+			<div class="card2-left">
+				<img src="/images/img-section2.webp" alt="">
+			</div>
+			<div class="card2-right">
+				<p>En Kollingas, creemos que la tecnología puede transformar la vida de las personas, brindando herramientas innovadoras para mejorar su bienestar. Nuestra empresa nace con la misión de fusionar la ciencia, la tecnología y el cuidado personal, ofreciendo soluciones inteligentes que ayuden a las personas a vivir de manera más saludable y equilibrada.
+	
+					Desde el desarrollo de aplicaciones personalizadas hasta dispositivos inteligentes, en Kollingas diseñamos tecnología que se adapta a las necesidades de cada usuario, permitiéndoles tomar el control de su bienestar de forma sencilla y efectiva.</p>
+				<a href="#contactanos">Unete a nosotros</a>
+			</div>
 		</div>
 	</section>
 	<section class="card card3">
@@ -390,29 +392,138 @@ const ExtraInformationProduct = [
 			padding: 1.5rem;
 		}
 	}
-	@media(min-width 768px){
+	@media(min-width:768px){
 		.information{
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 1.5rem;
 		}
+		.card2 h2{
+			font-size: 2.5rem;
+		}
+		.card2-right p{
+			max-width: 40rem;
+			font-size: 1.2rem;
+			line-height: 20px;
+		}
+		.card2 img{
+			width: 17rem;
+		}
+
 	}
 	@media(min-width:1024px){
 		.card3{
-			height: 80vh;
+			height: 100vh;
 			grid-template-columns: repeat(3, 1fr);
 		}
+		.information1{
+			margin: 0;
+		}
+		.information{
+			margin-top: -10rem;
+		}
+		.card3 h2{
+			font-size: 3rem;
+		}
 		.information-article img{
-			width: 350px;
+			width: 300px;
 			height: 200px;
 		}
 		.information-data{
-			width: 300px;
+			width: 220px;
 		}
 		.information-data p{
 			font-size: 1.1rem;
 		}
 		.information-data h3{
 			font-size: 1.3rem;
+		}
+		.card4{
+			height: 100vh;
+			justify-content: center;
+		}
+		.card4 h2{
+			margin-top: -10rem;
+			margin-bottom:5rem;
+			font-size: 3rem;
+		}
+		.card4-bottom{
+			flex-direction: row;
+		}
+		.information-product{
+			margin: 1rem;
+		}
+	}
+	@media(min-width:1440px){
+		section{
+			height: 60vh;
+		}
+		.card1{
+			flex-direction: row;
+		}
+		.section-left{
+			width: 50%;
+			text-align: left;
+			margin-left: 5rem;
+		}
+		.section-left h1{
+			font-size: 4rem;
+		}
+		.section-left p{
+			font-size: 1.5rem;
+		}
+		.section-left a{
+			font-size: 1.6rem;
+			border-radius: .7rem;
+		}
+		.section-right{
+			width: 50%;
+		}
+		.section-right img{
+			width: 30rem;
+			height: 30rem;
+		}
+		.card2-main{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.card2-right{
+			width: 50%;
+			text-align: right;
+		}
+		.card2 img{
+			width: 550px;
+		}
+		.card3 img{
+			width: 400px;
+			height: 250px;
+		}
+		.information-data{
+			width: 300px;
+		}
+		.card4 h2{
+			margin-top: -4rem;
+		}
+		.information-product{
+			width: 350px;
+		}
+		.information-product p{
+			font-size: 1rem;
+		}
+		.information-product h3{
+			font-size: 1.5rem;
+		}
+		.information-product a{
+			margin-top: 3rem;
+			transition: backgrond-color, border, color, .7s;
+		}
+		}
+		.information-product2 a{
+			margin-top: 6.5rem;
+		}
+		.information-product3 a{
+			margin-top: 5.3rem;
 		}
 	}
 </style>
