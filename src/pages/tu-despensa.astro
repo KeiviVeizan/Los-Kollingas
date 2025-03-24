@@ -1,7 +1,29 @@
 ---
-import Headerr from "../components/headerr.astro";
+const ExtraInformationCards = [
+	{
+		id:1,
+		info: "En Tu Despenza, creemos que una cocina bien organizada es la clave para una alimentación práctica y saludable. Nuestra app está diseñada para ayudarte a gestionar tu despensa de manera eficiente y brindarte recomendaciones personalizadas para que aproveches al máximo los ingredientes que tienes en casa.",
+		image: "images/img3.jpg"
+	},
+    {
+         id:2,
+        title: "¿Qué hacemos?",
+        info:["Te ayudamos a organizar tu despensa para que siempre sepas qué tienes disponible y evites desperdicios.",
+          "Creamos listas inteligentes para que puedas hacer compras más eficientes.",
+          "Generamos recetas personalizadas en nuestro plan premium, recomendándote opciones ideales según tu estilo de vida y necesidades nutricionales.",
+          "Calculamos el valor nutricional de cada receta, ayudándote a llevar una alimentación equilibrada."],
+        image:"images/img2.jpg"
+},
+	{
+		id:3,
+        title:"Nuestra Misión",
+		info: "Facilitar la vida en la cocina a través de la tecnología, ayudando a las personas a planificar mejor su alimentación, reducir desperdicios y disfrutar de una cocina más organizada y saludable.",
+		image: "images/img4.jpg"
+	},
+]
 
-const { title = 'Default Title' } = Astro.props;
+import Footerr from "../components/footerr.astro";
+import Headerr from "../components/headerr.astro";
 ---
 <html lang="es">
 <head>
@@ -14,6 +36,24 @@ const { title = 'Default Title' } = Astro.props;
 </head>
 <body>
     <Headerr/>
+    <section class="section-top">
+      <h2>
+				Cocina sin desperdicios, come con inteligencia.
+			</h2>
+			{
+				ExtraInformationCards.map((ec)=>(
+				<div class={`info info${ec.id}`}>
+					<img src={ec.image} alt="Imagen de la empresa">
+                    <div class="info-card">
+                        <h3>{ec.title}</h3>
+                        <p>
+                            {ec.info}
+                        </p>
+                    </div>
+				</div>
+				))
+			}
+    </section>
 <section class="download-section">
   <div class="container">
     <div class="phone-container">
@@ -39,15 +79,36 @@ const { title = 'Default Title' } = Astro.props;
     </div>
   </div>
 </section>
-  </h2>
+<Footerr/>
 </body>
 </html>
 <style>
   body{
     background-color: #E5E7EB;
   }
+  .section-top{
+    margin-top: 5.5rem;
+    width: 100%;
+  }
+  .section-top h2{
+    text-align: center;
+    margin: 0rem 1rem;
+  }
+  .info{
+    display: flex;
+    flex-direction:  column;
+    margin: 3rem 2rem;
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .info img{
+    border-radius: .5rem;
+  }
   .download-section {
-    margin-top: 7rem;
+    margin-bottom: 5rem;
     background-color: #E5E7EB;
     padding: 4rem 1rem;
     text-align: center;
@@ -117,7 +178,7 @@ const { title = 'Default Title' } = Astro.props;
 
   .description {
     color: #4B5563; 
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
     max-width: 400px;
     margin-left: auto;
@@ -217,4 +278,46 @@ const { title = 'Default Title' } = Astro.props;
       margin: 0.5rem auto;
     }
   }
+<<<<<<< HEAD
 </style>
+=======
+  @media (min-width:1024px){
+    .info{
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .info2{
+      flex-direction: row-reverse;
+    }
+    .info p{
+      max-width: 30rem;
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+    }
+    .info h3{
+      font-size: 2rem;
+    }
+    .info img{
+      width: 24rem;
+      height: 27rem;
+    }
+    .info3 img{
+      height: 20rem;
+    }
+  }
+  @media(min-width:1440px){
+    .info{
+      justify-content: space-evenly;
+    }
+    .info p{
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+    .section-top h2{
+      font-size: 3rem;
+      font-family: "Myriad Pro",sans-serif;
+    }
+  }
+</style>
+>>>>>>> c6c4c0f (Agregado de pie de página y información de tu despensa)

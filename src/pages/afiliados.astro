@@ -1,5 +1,6 @@
 ---
 const { title = 'Default Title' } = Astro.props;
+import Footerr from "../components/footerr.astro";
 import Headerr from "../components/headerr.astro";
 ---
 <html lang="es">
@@ -45,7 +46,7 @@ import Headerr from "../components/headerr.astro";
     </div>
   </div>
 </section>
-
+<Footerr/>
 <style>
   body{
     background-color: #E5E7EB;
@@ -55,6 +56,7 @@ import Headerr from "../components/headerr.astro";
     background-color: #E5E7EB; /* Blanco grisáceo como fondo */
     padding: 4rem 1rem;
     text-align: center;
+    height: 75vh;
   }
 
   .container {

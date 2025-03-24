@@ -1,5 +1,6 @@
 ---
 import Headerr from "../components/headerr.astro"
+import Footerr from "../components/footerr.astro"
 
 const ExtraInformationCard = [
 	{
@@ -67,6 +68,9 @@ const ExtraInformationProduct = [
 	<main class="card-main">
 	<section class="card card1">
 		<div class="section-left">
+			<h1 class="title">
+				Los Kollingas
+			</h1>
 			<h1>Vive de una manera más saludable y ordenada</h1>
 			<p>Nutrición e Innovación en un solo lugar</p>
 			<a href="#contactanos">Nuestros Productos</a>
@@ -130,6 +134,7 @@ const ExtraInformationProduct = [
 		}
 		</div>
 	</section>
+	<Footerr/>
 	</main>
 </body>
 </html>
@@ -148,6 +153,9 @@ const ExtraInformationProduct = [
 	.section-left h1{
 		font-size: 3.5rem;
 		color:#101820;
+	}
+	.section-left .title{
+		color: #FC4C02;
 	}
 	.section-right img{
 		width: 50px;
@@ -207,6 +215,7 @@ const ExtraInformationProduct = [
 	}
 	.card2 h2{
 		margin-bottom: 3rem;
+		font-family: "Myriad Pro", sans-serif;
 	}
 	.card2-right p{
 		margin:3rem 0rem;
@@ -529,7 +538,7 @@ const ExtraInformationProduct = [
 		}
 		.card2-right p {
 			max-width: 45rem;
-			font-size: 1rem;
+			font-size: 1.2rem;
 			line-height: 1.7rem;
 		}
 		.card3 img{
