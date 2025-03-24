@@ -5,18 +5,18 @@ const ExtraInformationCards = [
 		info: "En Tu Despenza, creemos que una cocina bien organizada es la clave para una alimentación práctica y saludable. Nuestra app está diseñada para ayudarte a gestionar tu despensa de manera eficiente y brindarte recomendaciones personalizadas para que aproveches al máximo los ingredientes que tienes en casa.",
 		image: "images/img3.jpg"
 	},
-    {
-         id:2,
-        title: "¿Qué hacemos?",
-        info:["Te ayudamos a organizar tu despensa para que siempre sepas qué tienes disponible y evites desperdicios.",
+  {
+    id:2,
+    title: "¿Qué hacemos?",
+    info:["Te ayudamos a organizar tu despensa para que siempre sepas qué tienes disponible y evites desperdicios.",
           "Creamos listas inteligentes para que puedas hacer compras más eficientes.",
           "Generamos recetas personalizadas en nuestro plan premium, recomendándote opciones ideales según tu estilo de vida y necesidades nutricionales.",
           "Calculamos el valor nutricional de cada receta, ayudándote a llevar una alimentación equilibrada."],
-        image:"images/img2.jpg"
+    image:"images/img2.jpg"
 },
 	{
 		id:3,
-        title:"Nuestra Misión",
+    title:"Nuestra Misión",
 		info: "Facilitar la vida en la cocina a través de la tecnología, ayudando a las personas a planificar mejor su alimentación, reducir desperdicios y disfrutar de una cocina más organizada y saludable.",
 		image: "images/img4.jpg"
 	},
@@ -41,13 +41,13 @@ import Headerr from "../components/headerr.astro";
 				Cocina sin desperdicios, come con inteligencia.
 			</h2>
 			{
-				ExtraInformationCards.map((ec)=>(
-				<div class={`info info${ec.id}`}>
-					<img src={ec.image} alt="Imagen de la empresa">
+				ExtraInformationCards.map((desp)=>(
+				<div class={`info info${desp.id}`}>
+					<img src={desp.image} alt="Imagen de la empresa">
                     <div class="info-card">
-                        <h3>{ec.title}</h3>
+                        <h3>{desp.title}</h3>
                         <p>
-                            {ec.info}
+                            {desp.info}
                         </p>
                     </div>
 				</div>
