@@ -1,5 +1,12 @@
 ---
+const testimonios = [
+  { nombre: "Carlos López", mensaje: "Estoy muy satisfecho con los productos de esta empresa. Calidad y servicio excepcionales." },
+  { nombre: "María Fernández", mensaje: "Increíble atención al cliente y productos de primera. ¡Recomendado al 100%!" },
+  { nombre: "Luis Gómez", mensaje: "Siempre compro aquí y nunca me han decepcionado. Excelente calidad." },
+  { nombre: "Ana Ramírez", mensaje: "El mejor lugar para encontrar lo que necesito. Gran variedad y buen precio." }
+];
 const { title = 'Default Title' } = Astro.props;
+import Footerr from "../components/footerr.astro";
 import Headerr from "../components/headerr.astro";
 ---
 <html lang="es">
@@ -13,8 +20,76 @@ import Headerr from "../components/headerr.astro";
 </head>
 <body>
     <Headerr/>
-  <h2>
-    Nuestra comunidad
-  </h2>
+<section class="comunidad">
+  <div class="comunidad-top">
+    <h2 class="titulo">Nuestra Comunidad</h2>
+    <p class="descripcion">Descubre lo que nuestros clientes opinan sobre nuestros productos y servicios.</p>
+    <img src="/images/comunidad.webp" alt="Comunidad">
+  </div>
+  <div class="testimonios">
+    {testimonios.map(({ nombre, mensaje }) => (
+      <div class="testimonio">
+        <p class="mensaje">“{mensaje}”</p>
+        <span class="autor">- {nombre}</span>
+      </div>
+    ))}
+  </div>
+</section>
+<Footerr/>
+<style>
+  .comunidad {
+    padding: 40px 20px;
+    text-align: center;
+    background:#E5E7EB;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .titulo {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #FC4C02;
+    font-family: "Myriad Pro", sans-serif;
+  }
+  .descripcion {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+    font-family: "Myriad",sans-serif;
+  }
+  .testimonios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .testimonio {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .mensaje {
+    font-family: "Myriad", sans-serif;
+    font-size: 1rem;
+    color: #444;
+  }
+  .autor {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #222;
+  }
+  @media (max-width: 600px) {
+    .titulo {
+      font-size: 1.5rem;
+    }
+    .descripcion {
+      font-size: 1rem;
+    }
+  }
+</style>
+
 </body>
 </html>

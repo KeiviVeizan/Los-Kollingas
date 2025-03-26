@@ -37,9 +37,14 @@ import Headerr from "../components/headerr.astro";
 <body>
     <Headerr/>
     <section class="section-top">
-      <h2>
+      <div class="toop">
+        <h2>
+          Tu Despensa
+        </h2>
+      </div>
+      <h3>
 				Cocina sin desperdicios, come con inteligencia.
-			</h2>
+			</h3>
 			{
 				ExtraInformationCards.map((desp)=>(
 				<div class={`info info${desp.id}`}>
@@ -90,7 +95,7 @@ import Headerr from "../components/headerr.astro";
     margin-top: 5.5rem;
     width: 100%;
   }
-  .section-top h2{
+  .section-top h3{
     text-align: center;
     margin: 0rem 1rem;
   }
@@ -162,6 +167,7 @@ import Headerr from "../components/headerr.astro";
     font-weight: bold;
     text-align: center;
     line-height: 1.2;
+    font-family: "Myriad" sans-serif;
   }
 
   .content {
@@ -174,6 +180,7 @@ import Headerr from "../components/headerr.astro";
     font-size: 2.5rem;
     margin-bottom: 1rem;
     line-height: 1.2;
+    font-family: "Myriad Pro" sans-serif;
   }
 
   .description {
@@ -304,6 +311,17 @@ import Headerr from "../components/headerr.astro";
     }
   }
   @media(min-width:1440px){
+    .toop{
+      background-image: url('/images/img-principal.jpg');
+      text-align: center;
+      height: 12rem;
+      display: grid;
+      place-content: center;
+    }
+    .toop h2{
+      font-size: 4rem;
+      font-family: "Myriad Pro", sans-serif;
+    }
     .info{
       justify-content: space-evenly;
     }
@@ -311,7 +329,8 @@ import Headerr from "../components/headerr.astro";
       font-size: 1.4rem;
       line-height: 1.7rem;
     }
-    .section-top h2{
+    .section-top h3{
+      margin-top: 3rem;
       font-size: 3rem;
       font-family: "Myriad Pro",sans-serif;
     }
